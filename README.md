@@ -2,6 +2,8 @@
 
 A ROS package of differential drive (multi-)robot in Gazebo
 
+![Robs pic](./meshes/robots.png)
+
 
 ### Launch
 
@@ -43,5 +45,3 @@ A node 'getPose' continuously gets the robots' names, positions, and yaw angles:
 $ rosrun diff_drive_simple getPose
 ```
 If you'd like to use this node, starting this node before issuing any control to the robots is recommended to avoid unnecessary problems
-
-![Robs pic](./meshes/robots.png)
