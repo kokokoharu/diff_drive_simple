@@ -1,30 +1,28 @@
 <launch>
-    <arg name="model"
-         default="$(find diff_drive_simple)/urdf/my_robot.urdf"/>
-  <!-- No namespace here as we will share this description.
-       Access with slash at the beginning -->
-       <param name="robot_description"
-             textfile="$(arg model)" />
 
-        <!-- jason: test with gazebo model -->
-        <!-- <param name="robot_description"
-             command="$(find xacro)/xacro.py $(find turtlebot_description)/robots/kobuki_hexagons_asus_xtion_pro.urdf.xacro" /> -->
+    <arg name="model" default="$(find diff_drive_simple)/urdf/my_robot.urdf"/>
 
-  <!-- BEGIN ROBOT 1-->
-  <group ns="robot0">
-    <param name="tf_prefix" value="jl_0_tf" />
-    <include file="$(find diff_drive_simple)/launch/my_multi_one.launch" >
-      <arg name="init_pose" value="-x 0 -y 0 -z 0" />
-      <arg name="robot_name"  value="jl_0" />
-    </include>
-  </group>
+   <!-- No namespace here as we will share this description. Access with slash at the beginning -->
+    <param name="robot_description" textfile="$(arg model)" />
 
-  <!-- BEGIN ROBOT 2-->
-  <group ns="robot1">
-    <param name="tf_prefix" value="jl_1_tf" />
-    <include file="$(find diff_drive_simple)/launch/my_multi_one.launch" >
-      <arg name="init_pose" value="-x 0 -y 1 -z 0" />
-      <arg name="robot_name"  value="jl_1" />
-    </include>
-  </group>
+
+    <!-- BEGIN ROBOT 1-->
+    <group ns="robot0">
+        <param name="tf_prefix" value="jl_0_tf" />
+        <include file="$(find diff_drive_simple)/launch/my_multi_one.launch" >
+            <arg name="init_pose" value="-x 0 -y 0 -z 0" />
+            <arg name="robot_name"  value="jl_0" />
+        </include>
+    </group>
+
+
+    <!-- BEGIN ROBOT 2-->
+    <group ns="robot1">
+        <param name="tf_prefix" value="jl_1_tf" />
+        <include file="$(find diff_drive_simple)/launch/my_multi_one.launch" >
+            <arg name="init_pose" value="-x 0 -y 1 -z 0" />
+            <arg name="robot_name"  value="jl_1" />
+        </include>
+    </group>
+    
 </launch>
