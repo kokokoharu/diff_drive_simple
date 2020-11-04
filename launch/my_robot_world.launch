@@ -22,6 +22,8 @@
 	<arg name="world"
 		 default="empty_world"/>
 
+ 	<arg name="model"
+  	   	 default="$(find diff_drive_simple)/urdf/my_robot.urdf"/>
 
 
 	<env name="GAZEBO_MODEL_PATH"
@@ -33,7 +35,8 @@
 	<!--
 		Converts the xacro robot information to UDRF and use it as a robot_description parameter
 	-->
-
+	<param name="robot_description"
+         command="$(find xacro)/xacro --inorder $(arg model)" />
 
 	<!--
 		Launch Gazebo world
