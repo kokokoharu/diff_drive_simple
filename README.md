@@ -1,6 +1,6 @@
 # diff_drive_simple
 
-A ROS package of differential drive (multi-)robot in Gazebo
+A ROS package of 2-wheel differential drive (multi-)robot in Gazebo
 
 ![Robs pic](./meshes/robots.png)
 
