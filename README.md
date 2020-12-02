@@ -1,6 +1,6 @@
 # diff_drive_simple
 
-A ROS package of 2-wheel differential drive (multi-)robot in Gazebo
+2-wheel differential drive (multi-)robot in Gazebo
 
 ![Robs pic](./meshes/robots.png)
 
@@ -12,8 +12,8 @@ Launch single robot:
 $ roslaunch diff_drive_simple my_robot_world.launch
 ```
 
-### Configure and launch multi-robot
-Multi-robot can be configured in 'robots.launch' for their name, spawn position, and adding more of them
+### Launch multi-robot
+Multi-robot can be configured in 'robots.launch' for their name, spawn position, and adding more 
 
 
 Launch multi-robot:
