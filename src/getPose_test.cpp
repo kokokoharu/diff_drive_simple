@@ -51,7 +51,7 @@ void chatterCallback(const gazebo_msgs::ModelStates::ConstPtr& msg)
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "listener");
+  ros::init(argc, argv, "getPose");
   ros::NodeHandle n;
 
   ros::Subscriber sub = n.subscribe("/gazebo/model_states", 100, chatterCallback);

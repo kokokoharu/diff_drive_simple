@@ -16,6 +16,9 @@
 
 	<arg name="world"
 		 default="empty_world"/>
+		 
+	<arg name="get_pose"
+		 default="false" />
 
     <env name="GAZEBO_MODEL_PATH"
          value="$(find diff_drive_simple)/models:$(optenv GAZEBO_MODEL_PATH)"/>
@@ -38,4 +41,9 @@
 
   <!-- include our robots -->
   <include file="$(find diff_drive_simple)/launch/robots.launch"/>
+  
+  <group if="$(arg get_pose)">
+  		<node pkg="diff_drive_simple" type="getPose" name="getPose" respawn="false" output="screen" />
+  </group>
+  
 </launch>
